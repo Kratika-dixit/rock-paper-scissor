@@ -5,19 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <button onclick="computermove();
-  playerMove('rock');
-">
-rock</button> 
-   <button onclick="computermove();
+    <style>
+        body{
+            background-color:pink;
+        }
+        .icon{
+            height:100px;
+            width:100px;
+         border-radius:50%;
+        
+          border-style: solid;
+        }
+.icon img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    border-radius: 60px;
+
+}
+.reset{
+    margin-top: 40px;
+    background-color: rgb(5, 19, 14);
+    padding: 8px;
+    color:white;
+}
+    </style>
+    <h1>Rock Paper Scissors</h1>
+<button class="icon" onclick="computermove();
+  playerMove('rock');"
+>
+<img src="rock.jpeg"></button> 
+   <button class="icon" onclick="computermove();
    playerMove('paper');"
    >
-   paper</button>
-   <button onclick="computermove();
+   <img src="paper-emoji.png"></button>
+   <button class="icon"onclick="computermove();
    playerMove('scissors');"
-   > scissors</button>
-   <button onclick="score.wins =0;
+   > <img src="scissors.png"></button>
+   <br>
+   <button class="reset"onclick="score.wins =0;
    score.loses=0;
    score.ties=0;
     document.querySelector('.js-score').innerHTML =
@@ -93,12 +121,10 @@ else if(result ==='you lose'){
  else if(result==='tie'){
     score.ties+=1;
  }   
-document.querySelector('.js-score').innerHTML= `wins=${score.wins}. losses=${score.loses}. ties=${score.ties}`;
+document.querySelector('.js-score').innerHTML= `wins : ${score.wins}, losses : ${score.loses} , ties : ${score.ties}`;
 document.querySelector('.result').innerHTML = result;
-document.querySelector('.moves').innerHTML= `your move ${playermove}- computer move ${computerchoice}`;
-alert(`you chose ${playermove}, computer chose ${computerchoice}, ${result}
- wins=${score.wins}. losses=${score.loses}. ties=${score.ties}`);  
-    
+document.querySelector('.moves').innerHTML= `your move - ${playermove} , computer move - ${computerchoice}`;
+
     }
 
    

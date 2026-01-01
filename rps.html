@@ -31,16 +31,25 @@
     padding: 8px;
     color:white;
 }
+.result{
+    font-weight: bold;
+    font-size: larger;
+
+}
+.res{
+    height: 50px;
+
+}
     </style>
     <h1>Rock Paper Scissors</h1>
 <button class="icon" onclick="computermove();
   playerMove('rock');"
 >
-<img src="rock.jpeg"></button> 
+<img src="rock.png"></button> 
    <button class="icon" onclick="computermove();
    playerMove('paper');"
    >
-   <img src="paper-emoji.png"></button>
+   <img src="paper.png"></button>
    <button class="icon"onclick="computermove();
    playerMove('scissors');"
    > <img src="scissors.png"></button>
@@ -51,9 +60,9 @@
     document.querySelector('.js-score').innerHTML =
     `wins=${score.wins}. losses=${score.loses}. ties=${score.ties}`;
    ">reset score</button>
-   <p class="js-score"> </p>
-   <p class="result"></p>
-   <p class="moves"></p>
+    <p class="result"></p>
+   <p class="js-score"> wins:0 ,losses:0 , ties:0</p>
+  <p class="moves"></p>
    <script> 
     let result;
    let playermove;
@@ -123,7 +132,7 @@ else if(result ==='you lose'){
  }   
 document.querySelector('.js-score').innerHTML= `wins : ${score.wins}, losses : ${score.loses} , ties : ${score.ties}`;
 document.querySelector('.result').innerHTML = result;
-document.querySelector('.moves').innerHTML= `your move - ${playermove} , computer move - ${computerchoice}`;
+document.querySelector('.moves').innerHTML= `your move -<img src="${playermove}.png" class="res">, computer move - <img src="${computerchoice}.png" class="res">`;
 
     }
 
